@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <form
+  #formaluno='ngForm'
+  (ngSubmit)="enviaform(formaluno.form.value)"
+  
+  >
+    <div class="row">
+      <div class="form-group col-12 mt-5">
+        <label for="nomeInput">Nome:</label>
+        <input type="text" placeholder="Digite seu Nome" class="form-control p-4"
+        ngModel name="nome"
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="foneInput">Idade:</label>
+        <input type="text" placeholder="Digite sua Idade" class="form-control p-4"
+        ngModel name="idade"
+        >
+      </div>
+      <div class="form-group col-md-4">
+        <label for="emailInput">Email:</label>
+        <input type="text" placeholder="Digite seu Email" class="form-control p-4"
+        ngModel name="email"
+        >
+      </div>
+      <div class="form-group col-md-4">
+        <label for="profissaoInput">Curso</label>
+        <select name="" id="profissaoInput" class="form-control"
+        ngModel name="engenharia"
+        >
+          <option value="">Selecione</option>
+          <option>Engenharia De Computação</option>
+          <option>Engenharia de Controle e Automação</option>
+          <option>Engenharia Elétrica</option>
+          <option>Engenharia Eletrônica</option>
+          <option>Engenharia Civil</option>
+          <option>Engenharia Química</option>
+          <option>Engenharia Alimentos</option>
+          <option>Engenharia Mecânica</option>
+          <option>Engenharia de Produção</option>
+          <option>Administração</option>
+          <option>Design</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" class="btn" [ngStyle]="{
+            'color':(cor ? 'white' : 'black')
+        }" (mouseenter)="mudarcor()" (mouseleave)="mudarcor()" [ngClass]="{
+            'btn-secondary':cor,
+            'btn-primary':!cor
+
+        }">enviar</button>
+
+      </div>
+    </div>s
+  </form>
+  <app-card-aluno *ngFor="let aluno of alunos" [aluno]="aluno"></app-card-aluno>
+</div>
+
+
+
+
+
+
+
+<h1>
+  <i class="glyphicon" [ngClass]="{'glyphicon-star-empty': !meuFavorito,
+                'glyphicon-star': meuFavorito   
+}" (click)="onClick()"></i>
+
+</h1>
